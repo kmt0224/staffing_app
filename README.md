@@ -46,7 +46,8 @@ https://docs.google.com/spreadsheets/d/1-QHp62l2QdWaF8Uysh_p6oOsMWs4_2_mlurGcAEc
 
 
 # 画面遷移図
-![staffing_gmn](https://user-images.githubusercontent.com/115336998/220908971-a8dc295f-d388-430d-8439-82f69036280c.png)
+![staffing_gmn](https://user-images.githubusercontent.com/115336998/220909870-c4d4557e-3c36-4df0-ad39-2d7afd574231.png)
+
 
 
 # 開発環境

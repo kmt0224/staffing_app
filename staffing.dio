@@ -66,18 +66,17 @@
                 <mxCell id="sVw_fEMtVUgnxds5eYEe-10" value="メンバー登録完了ページ" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
                     <mxGeometry x="210" y="50" width="160" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="sVw_fEMtVUgnxds5eYEe-29" style="edgeStyle=orthogonalEdgeStyle;html=1;startArrow=none;startFill=0;endArrow=classic;endFill=1;" parent="1" source="sVw_fEMtVUgnxds5eYEe-21" edge="1">
+                <mxCell id="gXrc9mY_YsoAtV-32mbv-1" style="edgeStyle=none;html=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="sVw_fEMtVUgnxds5eYEe-21" target="sVw_fEMtVUgnxds5eYEe-7">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="551" y="340" as="targetPoint"/>
                         <Array as="points">
-                            <mxPoint x="551" y="340"/>
+                            <mxPoint x="820" y="110"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="sVw_fEMtVUgnxds5eYEe-21" value="ポジション削除完了ページ" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
                     <mxGeometry x="740" y="170" width="160" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="sVw_fEMtVUgnxds5eYEe-26" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=-0.017;entryY=0.67;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=none;startFill=0;endArrow=classic;endFill=1;exitX=0.413;exitY=1.013;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="sVw_fEMtVUgnxds5eYEe-23" target="sVw_fEMtVUgnxds5eYEe-5" edge="1">
+                <mxCell id="gXrc9mY_YsoAtV-32mbv-2" style="edgeStyle=none;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.369;entryY=1.025;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="sVw_fEMtVUgnxds5eYEe-23" target="sVw_fEMtVUgnxds5eYEe-6">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="sVw_fEMtVUgnxds5eYEe-23" value="メンバー削除完了ページ" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
