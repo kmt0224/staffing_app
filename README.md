@@ -21,10 +21,10 @@ Staffing App
 ※配置表が登録されている状態では下記のメンバー及びポジションの登録削除ができない  
 #### メンバーの登録
 ・メンバー登録画面からメンバーの登録ができる  
-・メンバーの編集・削除ができる
+・メンバーの削除ができる
 #### ポジションの登録
 ・ポジション登録画面からポジションの登録ができる  
-・ポジションの編集・削除ができる
+・ポジションの削除ができる
 
 
 
@@ -35,14 +35,15 @@ Staffing App
 その作業をアプリケーションで行うことができるようにすることで、効率よく配置表を作成し本来の業務に支障をきたさないようにできればと考えている。
 
 # 洗い出した要件
-要件定義書
+要件定義書  
 https://docs.google.com/spreadsheets/d/1-QHp62l2QdWaF8Uysh_p6oOsMWs4_2_mlurGcAEctow/edit#gid=982722306
 
 # 実装予定の機能
 現在の構想中の仕様では、プルダウンから配置箇所を手入力する必要があるため、自動でランダム入力できるような機能を追加していきたいと考えている。
 
 # データベース設計
-![staffing_ER](https://user-images.githubusercontent.com/115336998/220905360-13f1171d-be85-4df6-84a7-62e0f6bea3cb.png)
+![staffing_ER](https://user-images.githubusercontent.com/115336998/220908032-27dfb114-c344-4274-ac43-3cde711d9e11.png)
+
 
 # 画面遷移図
 ![staffing_gmn](https://user-images.githubusercontent.com/115336998/220905374-e380e3b0-c480-4d6d-9607-c740cebafb4e.png)
