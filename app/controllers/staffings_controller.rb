@@ -1,4 +1,4 @@
-class PositionsController < ApplicationController
+class StaffingsController < ApplicationController
   def index
     get_week
   end

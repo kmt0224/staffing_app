@@ -55,30 +55,11 @@ body {
   background-color: rgb(246, 253, 255);
 }
 
-.plan-list {
-  margin: 1vh 0;
-}
-
-.form {
+.buttons {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 15vh;
+  text-align: center;
+  justify-content: space-between;
+  margin: 10vh 20vw;
+  list-style: none;
 }
 
-.lavel {
-  font-size: 3vh;
-  color: rgb(255, 255, 255);
-}
-
-.text-input {
-  height: 4vh;
-  width: 15vw;
-  margin: 0 2vw;
-}
-
-.date-select {
-  height: 4vh;
-  width: 13vw;
-  margin: 0 2vw;
-}
