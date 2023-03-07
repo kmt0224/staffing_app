@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  root "positions#index"
+  root "staffings#index"
 end
