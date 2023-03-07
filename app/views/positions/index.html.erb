@@ -1,0 +1,33 @@
+  <div class='calendar'>
+    <div class='members'>
+      <div class='member'>member1</div>
+      <div class='member'>member2</div>
+      <div class='member'>member2</div>
+      <div class='member'>member2</div>
+
+    </div>
+    <% @week_days.each do |day| %>
+      <div class='item'>
+        <div class='date'>
+          <%= day[:month] %>/<%= day[:date] %><%= day[:wday] %>
+        </div>
+        <div class='position'>
+          positionA
+        </div>
+        <div class='position'>
+          positionB
+        </div> 
+        <div class='position'>
+          positionB
+        </div>    
+        <div class='position'>
+          positionB
+        </div>    
+   
+      </div>
+    <% end %>
+  </div>
+
+  <ul class='buttons'>
+    <li><%= link_to '人員配置登録', '#', class: 'staffing-button' %>
+  </ul>
