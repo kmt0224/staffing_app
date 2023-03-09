@@ -3,6 +3,9 @@ class StaffingsController < ApplicationController
     get_week
   end
 
+  def edit
+  end
+
   private
   def get_week
     wdays = ['(日)','(月)','(火)','(水)','(木)','(金)','(土)','(日)','(月)','(火)','(水)','(木)','(金)','(土)']
