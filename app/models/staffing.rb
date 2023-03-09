@@ -1,2 +1,0 @@
-class Staffing < ApplicationRecord
-end
