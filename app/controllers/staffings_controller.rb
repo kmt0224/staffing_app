@@ -1,6 +1,6 @@
 class StaffingsController < ApplicationController
   def index
-    get_week
+    @get_week = get_week
   end
 
   def edit
