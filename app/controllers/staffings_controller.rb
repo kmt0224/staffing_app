@@ -4,6 +4,7 @@ class StaffingsController < ApplicationController
   end
 
   def edit
+    @get_week = get_week
   end
 
   private
