@@ -1,4 +1,5 @@
   <div class='calendar'>
+    <%# <%= form_with model: , local: true do |f| %> 
     <div class='members'>
       <div class='member'>@member.name</div>
       <div class='member'>@member.name</div>
@@ -28,3 +29,9 @@
     <% end %>
   </div>
 
+  <%# <%= f.submit "この内容で登録する" %> 
+
+  <div class='buttons'>
+    <div class='member-register'><%= link_to 'メンバーを登録', '#', class: 'button' %></div>
+    <div class='position-register'><%= link_to '配置箇所を登録', '#', class: 'button' %></div>
+  </div>
