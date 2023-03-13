@@ -5,7 +5,10 @@
 <% end %>
 
 <% @positions.each do |position| %>
-<div><%= position.position %></div>
+  <div class='all_positions'>
+    <div><%= position.position %></div>
+    <%= link_to '削除',  position_path(position), method: :delete %>
+  </div>
 <% end %>
 
 <div><%= link_to 'トップページにもどる', root_path, class: 'button' %></div>

@@ -5,7 +5,7 @@
 <% end %>
 
 <% @members.each do |member| %>
-  <div class=all_members>
+  <div class='all_members'>
     <div><%= member.name %></div>
     <%= link_to '削除', member_path(member), method: :delete %>
   </div>
