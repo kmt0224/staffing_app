@@ -5,7 +5,10 @@
 <% end %>
 
 <% @members.each do |member| %>
-<div><%= member.name %></div>
+  <div class=all_members>
+    <div><%= member.name %></div>
+    <%= link_to '削除', member_path(member), method: :delete %>
+  </div>
 <% end %>
 
 <div><%= link_to 'トップページにもどる', root_path, class: 'button' %></div>
