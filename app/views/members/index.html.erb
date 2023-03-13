@@ -1,9 +1,11 @@
-人員の登録
+メンバーの登録
 <%= form_with model: @member, local: true do |f| %>
-<div><%= f.text_area :name, placeholder: "名前を入力" %></div>
+<div><%= f.text_field :name, placeholder: "名前を入力" %></div>
 <div><%= f.submit "登録する" %></div>
 <% end %>
 
 <% @members.each do |member| %>
 <div><%= member.name %></div>
 <% end %>
+
+<div><%= link_to 'トップページにもどる', root_path, class: 'button' %></div>
