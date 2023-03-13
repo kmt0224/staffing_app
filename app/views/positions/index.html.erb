@@ -1,0 +1,11 @@
+配置箇所の登録
+<%= form_with model: @position, local: true do |f| %>
+<div><%= f.text_field :position, placeholder: "配置箇所を入力" %></div>
+<div><%= f.submit "登録する" %></div>
+<% end %>
+
+<% @positions.each do |position| %>
+<div><%= position.position %></div>
+<% end %>
+
+<div><%= link_to 'トップページにもどる', root_path, class: 'button' %></div>
