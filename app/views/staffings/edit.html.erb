@@ -13,9 +13,11 @@
         <% Member.count.times do %>
           <div class='position'>
             <select>
+              <option>選択</option>
               <% Position.all.each do |position| %>
-                <option><%= position.position %></option>
+              <option><%= position.position %></option>   
               <% end %>
+              <option>休日</option>
             </select>
           </div>
         <% end %>   
