@@ -1,30 +1,24 @@
   <div class='calendar'>
     <%# <%= form_with model: , local: true do |f| %> 
     <div class='members'>
-      <div class='member'>@member.name</div>
-      <div class='member'>@member.name</div>
-      <div class='member'>@member.name</div>
-      <div class='member'>@member.name</div>
-
+      <% Member.all.each do |member| %>
+        <div class='member'><%= member.name %></div>
+      <% end %>
     </div>
     <% @week_days.each do |day| %>
       <div class='item'>
         <div class='date'>
           <%= day[:month] %>/<%= day[:date] %><%= day[:wday] %>
         </div>
-        <div class='position'>
-          positionA
-        </div>
-        <div class='position'>
-          positionB
-        </div> 
-        <div class='position'>
-          positionB
-        </div>    
-        <div class='position'>
-          positionB
-        </div>    
-   
+        <% Member.count.times do %>
+          <div class='position'>
+            <select>
+              <% Position.all.each do |position| %>
+                <option><%= position.position %></option>
+              <% end %>
+            </select>
+          </div>
+        <% end %>   
       </div>
     <% end %>
   </div>
@@ -33,5 +27,5 @@
 
   <div class='buttons'>
     <div class='member-register'><%= link_to 'メンバーを登録', members_path, class: 'button' %></div>
-    <div class='position-register'><%= link_to '配置箇所を登録', '#', class: 'button' %></div>
+    <div class='position-register'><%= link_to '配置箇所を登録', positions_path, class: 'button' %></div>
   </div>
