@@ -1,21 +1,34 @@
 class StaffingsController < ApplicationController
+  before_action :move_to_start_days
+
   def index
     @get_week = get_week
   end
 
-  def edit
-    @get_week = get_week
+  def create
+  end
+  
+  private
+  def move_to_start_days
+    start_day = StartDay.all
+    if start_day.blank?
+      redirect_to start_days_path
+    end
   end
 
-  private
   def get_week
     wdays = ['(日)','(月)','(火)','(水)','(木)','(金)','(土)','(日)','(月)','(火)','(水)','(木)','(金)','(土)']
-    @todays_date = Date.today
+    StartDay.all.each do |day|
+      @todays_date = day.start_day
+    end
 
     @week_days = []
 
+    
+    staffings = Staffing.where(date: @todays_date..@todays_date + 13)
+
     14.times do |x|      
-      wday_num = Date.today.wday + x
+      wday_num = @todays_date.wday + x
       if wday_num >= 14
         wday_num = wday_num - 14
       end
@@ -26,4 +39,7 @@ class StaffingsController < ApplicationController
       end
     end
 
+    # def staffing_params
+    #   params.require(:staffing).permit(:startDate, :date).marge(member_id: @member.id, position_id: @position.id)
+    # end
 end
