@@ -5,6 +5,13 @@ body {
   background-color: white;
 }
 
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+}
 .calendar {
   width: 100vw;
   margin-top: 15vh;
@@ -64,5 +71,9 @@ body {
 
 .button {
   color: black;
+}
+
+.date-input {
+  display: none;
 }
 
