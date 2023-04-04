@@ -1,0 +1,2 @@
+class StartDay < ApplicationRecord
+end
