@@ -1,33 +1,39 @@
   <div class='calendar'>
-    <div class='members'>
-      <div class='member'>@member.name</div>
-      <div class='member'>@member.name</div>
-      <div class='member'>@member.name</div>
-      <div class='member'>@member.name</div>
-
-    </div>
-    <% @week_days.each do |day| %>
-      <div class='item'>
-        <div class='date'>
-          <%= day[:month] %>/<%= day[:date] %><%= day[:wday] %>
-        </div>
-        <div class='position'>
-          positionA
-        </div>
-        <div class='position'>
-          positionB
-        </div> 
-        <div class='position'>
-          positionB
-        </div>    
-        <div class='position'>
-          positionB
-        </div>    
-   
+    <%= form_with model: @staffing, url: staffings_path, class: 'form' do |f| %>
+      <div class='members'>
+        <% Member.all.each do |member| %>
+          <div class='member'><%= member.name %></div>
+        <% end %>
       </div>
+      <% @week_days.each do |day| %>
+        <div class='item'>
+          <div class='date'>
+            <%= day[:month] %>/<%= day[:date] %><%= day[:wday] %>
+          </div>
+          <% Member.all.each do |member| %>
+            <%= f.fields_for :staffing do |i| %>
+              <%= i.date_select :date, {default: {day: day[:date]}}, {class: 'date-input'} %>
+            <% end %>
+            <input name="staffing[member_ids][]" type="hidden" value=<%= member %> %>
+            <div class='position'>
+              <select name="staffing[position_ids][]">
+                <option>選択</option>
+                <% Position.all.each do |position| %>
+                <option><%= position.position %></option>   
+                <% end %>
+                <option>休日</option>
+              </select>
+            </div>
+          <% end %>   
+        </div>
+      <% end %>
+      <%= f.submit %>
     <% end %>
   </div>
 
   <div class='buttons'>
-    <div class='staffing-register'><%= link_to '人員配置登録', edit_staffing_path(@get_week), class: 'button' %></div>
+    <div class='member-register'><%= link_to 'メンバーを登録', members_path, class: 'button' %></div>
+    <div class='position-register'><%= link_to '配置箇所を登録', positions_path, class: 'button' %></div>
   </div>
+
+  <%= link_to "日付選択", destroy_all_start_days_path, method: :delete %>
