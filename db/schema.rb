@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_12_141918) do
+ActiveRecord::Schema.define(version: 2023_04_04_023645) do
 
   create_table "members", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -28,11 +28,16 @@ ActiveRecord::Schema.define(version: 2023_03_12_141918) do
     t.bigint "member_id", null: false
     t.bigint "position_id", null: false
     t.date "date", null: false
-    t.date "startDate", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["member_id"], name: "index_staffings_on_member_id"
     t.index ["position_id"], name: "index_staffings_on_position_id"
+  end
+
+  create_table "start_days", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.date "start_day", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   add_foreign_key "staffings", "members"
