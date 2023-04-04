@@ -1,0 +1,5 @@
+<%= form_with model: @start_day, local: true do |f| %>
+  <%= f.label :日付を入力, class: 'lavel' %>
+  <%= f.date_field :start_day %>
+  <%= f.submit '送信', class: 'submit' %>
+<% end %>
