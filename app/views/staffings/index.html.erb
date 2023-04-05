@@ -1,1 +1,23 @@
+  <div class='calendar'>
+    <div class='members'>
+      <% @members.each do |member| %>
+        <div class='member'><%= member.name %></div>
+      <% end %>
+    </div>
+    <% @week_days.each do |day| %>
+      <div class='item'>
+        <div class='date'>
+          <%= day[:month] %>/<%= day[:date] %><%= day[:wday] %>
+        </div>
+        <% Member.count.times do |i| %>
+          <div class='position'>
+            <%= day[:staffing][i] %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+
 <%= link_to "入力画面へ", new_staffing_path%>
+<%= link_to "削除", destroy_all_staffings_path, method: :delete %>
