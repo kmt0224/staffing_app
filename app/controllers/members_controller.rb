@@ -5,12 +5,13 @@ class MembersController < ApplicationController
 
   def create
     @member = Member.create(member_params)
+    redirect_to members_path
   end
 
   def destroy
     @member = Member.find(params[:id])
     @member.destroy
-    redirect_to root_path
+    redirect_to members_path
   end
 
   private
