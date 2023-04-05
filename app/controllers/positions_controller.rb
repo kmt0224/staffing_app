@@ -5,12 +5,13 @@ class PositionsController < ApplicationController
 
   def create
     @position = Position.create(position_params)
+    redirect_to positions_path
   end
 
   def destroy
     @position = Position.find(params[:id])
-    @osition.destroy
-    redirect_to root_path
+    @position.destroy
+    redirect_to positions_path
   end
 
   private
