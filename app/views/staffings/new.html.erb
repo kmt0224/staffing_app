@@ -1,0 +1,33 @@
+  <div class='calendar'>
+    <%= form_with model: @staffing, url: staffings_path, class: 'form' do |f| %>
+      <div class='members'>
+        <% @members.each do |member| %>
+          <div class='member'><%= member.name %></div>
+        <% end %>
+      </div>
+      <% @week_days.each do |day| %>
+        <div class='item'>
+          <div class='date'>
+            <%= day[:month] %>/<%= day[:date] %><%= day[:wday] %>
+          </div>
+          <% @members.each do |member| %>
+            <%= f.fields_for :staffings do |i| %>
+              <%= i.date_select :date, {default: {day: day[:date]}}, {class: 'date-input'} %>
+            <div class='position'>
+              <%= i.hidden_field :member_id, :value => member.id %>
+              <%= i.select :position_id, @positions,{},{} %>
+            </div>
+            <% end %>
+          <% end %>   
+        </div>
+      <% end %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+
+  <div class='buttons'>
+    <div class='member-register'><%= link_to 'メンバーを登録', members_path, class: 'button' %></div>
+    <div class='position-register'><%= link_to '配置箇所を登録', positions_path, class: 'button' %></div>
+  </div>
+
+  <%= link_to "日付選択", destroy_all_start_days_path, method: :delete %>
