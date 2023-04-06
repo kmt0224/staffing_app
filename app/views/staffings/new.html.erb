@@ -8,13 +8,23 @@
       </div>
       <% @week_days.each do |day| %>
         <div class='item'>
-          <div class='date'>
+          <div class=
+            <% if day[:wday] == '(土)' || day[:wday] == '(日)' %>
+              'weekend'
+            <% else %>
+              'date'
+            <% end %>>
             <%= day[:month] %>/<%= day[:date] %><%= day[:wday] %>
           </div>
           <% @members.each do |member| %>
             <%= f.fields_for :staffings do |i| %>
               <%= i.date_select :date, {default: {day: day[:date]}}, {class: 'date-input'} %>
-            <div class='position'>
+            <div class=
+              <% if day[:wday] == '(土)' || day[:wday] == '(日)' %>
+                'position-weekend'
+              <% else %>
+                'position'
+              <% end %>>
               <%= i.hidden_field :member_id, :value => member.id %>
               <%= i.select :position_id, @positions,{},{} %>
             </div>

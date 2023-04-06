@@ -36,6 +36,17 @@ body {
   background-color: rgb(246, 253, 255);
 }
 
+.weekend {
+  height: 5vh;
+  width: 6vw;
+  display: flex;
+  font-size: 3vh;
+  align-items: center;
+  justify-content: center;
+  border: medium solid rgb(0, 0, 0);
+  background-color: rgb(213, 91, 91);
+}
+
 .position {
   height: 5vh;
   width: 6vw;
@@ -45,6 +56,17 @@ body {
   justify-content: center;
   border: medium solid rgb(0, 0, 0);
   background-color: rgb(246, 253, 255);
+}
+
+.position-weekend {
+  height: 5vh;
+  width: 6vw;
+  display: flex;
+  font-size: 2vh;
+  align-items: center;
+  justify-content: center;
+  border: medium solid rgb(0, 0, 0);
+  background-color: rgb(213, 91, 91);
 }
 
 .members {
