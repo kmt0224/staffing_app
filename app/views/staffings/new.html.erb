@@ -1,3 +1,4 @@
+人員配置の登録
   <div class='calendar'>
     <%= form_with model: @staffing, url: staffings_path, class: 'form' do |f| %>
       <div class='members'>
@@ -26,8 +27,8 @@
   </div>
 
   <div class='buttons'>
-    <%= link_to 'メンバーを登録', members_path, class: 'button' %>
-    <%= link_to '配置箇所を登録', positions_path, class: 'button' %>
-    <%= link_to 'トップページ', root_path, class: 'button' %>
+    <%= link_to 'メンバーを登録する', members_path, class: 'button' %>
+    <%= link_to '配置箇所を登録する', positions_path, class: 'button' %>
+    <%= link_to 'トップページへ', root_path, class: 'button' %>
   </div>
 
