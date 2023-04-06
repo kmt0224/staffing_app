@@ -1,5 +1,8 @@
 class StaffingsController < ApplicationController
   before_action :move_to_start_days
+  before_action :get_week, only: [:index, :new, :create]
+  before_action :set_members, only: [:index, :new, :create]
+  before_action :move_to_index, only: [:new]
 
   def index
     get_week
@@ -39,7 +42,14 @@ class StaffingsController < ApplicationController
   def move_to_start_days
     start_day = StartDay.all
     if start_day.blank?
+    unless start_day.exists?
       redirect_to start_days_path
+    end
+  end
+
+  def move_to_index
+    if Staffing.exists?
+      redirect_to root_path
     end
   end
 

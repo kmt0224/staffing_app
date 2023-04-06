@@ -1,4 +1,5 @@
 class StartDaysController < ApplicationController
+  before_action :move_to_index, only: [:index]
 
   def index
     @start_day
@@ -18,5 +19,10 @@ class StartDaysController < ApplicationController
     params.permit(:start_day)
   end
 
+  def move_to_index
+    if Staffing.exists? || StartDay.exists?
+      redirect_to root_path
+    end
+  end
 
 end
