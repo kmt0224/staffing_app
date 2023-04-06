@@ -5,22 +5,15 @@ class StaffingsController < ApplicationController
   before_action :move_to_index, only: [:new]
 
   def index
-    get_week
-    @members = Member.all
-    @staffing = Form::StaffingCollection.new
     pick_uniq
   end
 
   def new
-    get_week
-    @members = Member.all
     @positions = Position.all.map {|position| [position.position, position.id]}
     @staffing = Form::StaffingCollection.new
   end
 
   def create
-    get_week
-    @members = Member.all
     @positions = Position.all.map {|position| [position.position, position.id]}
     @staffing =  Form::StaffingCollection.new(staffing_params)
    if @staffing.save
@@ -30,18 +23,17 @@ class StaffingsController < ApplicationController
    end
   end
 
-
   def destroy_all
     Staffing.destroy_all
     StartDay.destroy_all
     redirect_to root_path
   end
 
+
   private
   # start_dayが無いと自動遷移
   def move_to_start_days
     start_day = StartDay.all
-    if start_day.blank?
     unless start_day.exists?
       redirect_to start_days_path
     end
@@ -67,6 +59,11 @@ class StaffingsController < ApplicationController
     end
     @uniq = member_positions.select{|e| member_positions.count(e) > 3 }.uniq
   end
+
+  def set_members
+    @members = Member.all
+  end
+
 
   #2週間分の日付、曜日、人員配置を取得するメソッド
   def get_week
