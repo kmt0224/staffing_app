@@ -29,6 +29,6 @@
 
   <% @uniq.count.times do |i| %>
     <div class="uniq">
-      「<%= @pick_uniq[i][:member] %>」は「<%= @pick_uniq[i][:position] %>」に4回以上配置されています。
+      「<%= @uniq[i][:member] %>」は「<%= @uniq[i][:position] %>」に4回以上配置されています。
     </div>
   <% end %>
