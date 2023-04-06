@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root "staffings#index"
-  resources :staffings, only: [:index, :new, :create, :edit, :update] do
+  resources :staffings, only: [:index, :new, :create] do
     collection do
       delete 'destroy_all'
     end
