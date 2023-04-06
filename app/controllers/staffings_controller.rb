@@ -48,7 +48,7 @@ class StaffingsController < ApplicationController
     params.require(:form_staffing_collection).permit(staffings_attributes: [:member_id, :position_id, :date])
   end
 
-  #重複内容を取得するメソッド
+  #4回以上の重複内容を取得するメソッド
   def pick_uniq
     member_positions = []
     Staffing.all.each do |s|
