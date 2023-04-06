@@ -10,7 +10,7 @@
         <div class='date'>
           <%= day[:month] %>/<%= day[:date] %><%= day[:wday] %>
         </div>
-        <% Member.count.times do |i| %>
+        <% @members.count.times do |i| %>
           <div class='position'>
             <%= day[:staffing][i] %>
           </div>
