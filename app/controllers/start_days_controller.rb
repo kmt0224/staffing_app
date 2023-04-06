@@ -13,11 +13,6 @@ class StartDaysController < ApplicationController
     end
   end
 
-  def destroy_all
-    StartDay.destroy_all
-    redirect_to root_path
-  end
-
   private
   def start_day_params
     params.permit(:start_day)
