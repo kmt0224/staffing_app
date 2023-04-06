@@ -36,6 +36,7 @@ class StaffingsController < ApplicationController
   end
 
   private
+  # start_dayが無いと自動遷移
   def move_to_start_days
     start_day = StartDay.all
     if start_day.blank?
@@ -43,6 +44,7 @@ class StaffingsController < ApplicationController
     end
   end
 
+  #一括保存のストロングパラメーター
   def staffing_params
     params.require(:form_staffing_collection).permit(staffings_attributes: [:member_id, :position_id, :date])
   end
@@ -56,8 +58,13 @@ class StaffingsController < ApplicationController
     end
     @pick_uniq = member_positions.select{|e| member_positions.count(e) > 3 }.uniq
   end
+
+  #2週間分の日付、曜日、人員配置を取得するメソッド
   def get_week
+    #wdayを数字ではなく漢字の曜日で取得するため
     wdays = ['(日)','(月)','(火)','(水)','(木)','(金)','(土)','(日)','(月)','(火)','(水)','(木)','(金)','(土)']
+
+    #表示の開始日をstart_dayに指定する
     StartDay.all.each do |day|
       @todays_date = day.start_day
     end
