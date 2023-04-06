@@ -2,21 +2,21 @@ class StaffingsController < ApplicationController
   before_action :move_to_start_days
 
   def index
-    @get_week = get_week
+    get_week
     @members = Member.all
     @positions = Position.all.map {|position| [position.position, position.id]}
     @staffing = Form::StaffingCollection.new
   end
 
   def new
-    @get_week = get_week
+    get_week
     @members = Member.all
     @positions = Position.all.map {|position| [position.position, position.id]}
     @staffing = Form::StaffingCollection.new
   end
 
   def create
-    @get_week = get_week
+    get_week
     @members = Member.all
     @positions = Position.all.map {|position| [position.position, position.id]}
     @staffing =  Form::StaffingCollection.new(staffing_params)
@@ -27,11 +27,6 @@ class StaffingsController < ApplicationController
    end
   end
 
-  def edit
-  end
-
-  def update
-  end
 
   def destroy_all
     Staffing.destroy_all
