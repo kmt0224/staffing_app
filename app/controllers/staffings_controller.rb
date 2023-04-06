@@ -6,6 +6,7 @@ class StaffingsController < ApplicationController
     @members = Member.all
     @positions = Position.all.map {|position| [position.position, position.id]}
     @staffing = Form::StaffingCollection.new
+    pick_uniq
   end
 
   def new
@@ -45,6 +46,15 @@ class StaffingsController < ApplicationController
     params.require(:form_staffing_collection).permit(staffings_attributes: [:member_id, :position_id, :date])
   end
 
+  #重複内容を取得するメソッド
+  def pick_uniq
+    member_positions = []
+    Staffing.all.each do |s|
+      member_position = {member: s.member.name, position: s.position.position}
+      member_positions.push(member_position)
+    end
+    @pick_uniq = member_positions.select{|e| member_positions.count(e) > 3 }.uniq
+  end
   def get_week
     wdays = ['(日)','(月)','(火)','(水)','(木)','(金)','(土)','(日)','(月)','(火)','(水)','(木)','(金)','(土)']
     StartDay.all.each do |day|
