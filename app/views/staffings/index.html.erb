@@ -18,6 +18,8 @@
     <% end %>
   </div>
 
-
-<%= link_to "入力画面へ", new_staffing_path%>
-<%= link_to "削除", destroy_all_staffings_path, method: :delete %>
+  <div class='buttons'>
+    <%= link_to "入力画面へ", new_staffing_path, class: "button" %>
+    <%= link_to "日付選択", destroy_all_start_days_path, method: :delete, class: "button" %>
+    <%= link_to "削除", destroy_all_staffings_path, method: :delete, class: "button" %>
+  </div>
