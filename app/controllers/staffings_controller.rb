@@ -4,7 +4,6 @@ class StaffingsController < ApplicationController
   def index
     get_week
     @members = Member.all
-    @positions = Position.all.map {|position| [position.position, position.id]}
     @staffing = Form::StaffingCollection.new
     pick_uniq
   end
