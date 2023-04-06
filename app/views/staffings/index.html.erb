@@ -1,3 +1,4 @@
+人員配置表  
   <div class='calendar'>
     <div class='members'>
       <% @members.each do |member| %>
@@ -19,7 +20,15 @@
   </div>
 
   <div class='buttons'>
-    <%= link_to "入力画面へ", new_staffing_path, class: "button" %>
-    <%= link_to "日付選択", destroy_all_start_days_path, method: :delete, class: "button" %>
-    <%= link_to "削除", destroy_all_staffings_path, method: :delete, class: "button" %>
+    <% unless Staffing.exists? %>
+      <%= link_to "入力画面へ", new_staffing_path, class: "button" %>
+    <% else %>
+      <%= link_to "削除", destroy_all_staffings_path, method: :delete, class: "button" %>
+    <% end %>
   </div>
+
+  <% @pick_uniq.count.times do |i| %>
+    <div class="uniq">
+      「<%= @pick_uniq[i][:member] %>」は「<%= @pick_uniq[i][:position] %>」に4回以上配置されています。
+    </div>
+  <% end %>
