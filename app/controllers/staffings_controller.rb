@@ -55,7 +55,7 @@ class StaffingsController < ApplicationController
       member_position = {member: s.member.name, position: s.position.position}
       member_positions.push(member_position)
     end
-    @pick_uniq = member_positions.select{|e| member_positions.count(e) > 3 }.uniq
+    @uniq = member_positions.select{|e| member_positions.count(e) > 3 }.uniq
   end
 
   #2週間分の日付、曜日、人員配置を取得するメソッド
