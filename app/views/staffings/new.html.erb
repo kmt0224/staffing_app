@@ -21,14 +21,13 @@
           <% end %>   
         </div>
       <% end %>
-      <%= f.submit %>
+      <%= f.submit '保存' %>
     <% end %>
   </div>
 
   <div class='buttons'>
-    <div class='member-register'><%= link_to 'メンバーを登録', members_path, class: 'button' %></div>
-    <div class='position-register'><%= link_to '配置箇所を登録', positions_path, class: 'button' %></div>
-    <%= link_to 'トップページ', root_path %>
+    <%= link_to 'メンバーを登録', members_path, class: 'button' %>
+    <%= link_to '配置箇所を登録', positions_path, class: 'button' %>
+    <%= link_to 'トップページ', root_path, class: 'button' %>
   </div>
 
-  <%= link_to "日付選択", destroy_all_start_days_path, method: :delete %>
