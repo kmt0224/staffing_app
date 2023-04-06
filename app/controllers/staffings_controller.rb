@@ -31,6 +31,7 @@ class StaffingsController < ApplicationController
 
   def destroy_all
     Staffing.destroy_all
+    StartDay.destroy_all
     redirect_to root_path
   end
 
