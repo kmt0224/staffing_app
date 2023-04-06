@@ -72,7 +72,6 @@ class StaffingsController < ApplicationController
     @week_days = []
     
     staffings = Staffing.where(date: @todays_date..@todays_date + 13)
-
     today_staffings = []
     staffings.each do |s|
       today_staffing = {member: s.member.name, position: s.position.position, date: s.date}
