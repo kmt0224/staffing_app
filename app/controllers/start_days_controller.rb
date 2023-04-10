@@ -10,6 +10,9 @@ class StartDaysController < ApplicationController
     redirect_to root_path
   end
 
+  def destroy_all
+    StartDay.destroy_all
+    redirect_to root_path
   end
 
   private
