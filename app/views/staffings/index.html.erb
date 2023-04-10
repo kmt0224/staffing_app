@@ -7,23 +7,24 @@
     </div>
     <% @week_days.each do |day| %>
       <div class='item'>
-        <div class=
-          <% if day[:wday] == '(土)' || day[:wday] == '(日)' %>
-            'weekend'
-          <% else %>
-            'date'
-          <% end %>>
-          <%= day[:month] %>/<%= day[:date] %><%= day[:wday] %>
-        </div>
-        <% @members.count.times do |i| %>
-          <div class=
-            <% if day[:wday] == '(土)' || day[:wday] == '(日)' %>
-              'position-weekend'
-            <% else %>
-              'position'
-            <% end %>>
-            <%= day[:staffing][i] %>
+        <% if day[:wday] == '(土)' || day[:wday] == '(日)' %>
+          <div class='weekend'>
+            <%= day[:month] %>/<%= day[:date] %><%= day[:wday] %>
           </div>
+        <% else %>
+          <div class='date'>
+            <%= day[:month] %>/<%= day[:date] %><%= day[:wday] %>
+          </div>
+        <% end %>
+        <% @members.count.times do |i| %>
+          <% if day[:wday] == '(土)' || day[:wday] == '(日)' %>
+            <div class='position-weekend'>
+            </div>
+          <% else %>
+            <div class='position'>
+              <%= day[:staffing][i] %>
+            </div>
+          <% end %>
         <% end %>
       </div>
     <% end %>
