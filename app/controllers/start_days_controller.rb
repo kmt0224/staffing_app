@@ -12,6 +12,10 @@ class StartDaysController < ApplicationController
     else
       render :index
     end
+    @start_day = StartDay.create(start_day_params)
+    redirect_to root_path
+  end
+
   end
 
   private
