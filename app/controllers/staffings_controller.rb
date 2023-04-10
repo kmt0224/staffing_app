@@ -88,7 +88,6 @@ class StaffingsController < ApplicationController
       position = []
       today_staffings.count.times do |i|
         if today_staffings[i][:date] == @todays_date + x 
-          member.push(today_staffings[i][:member])
           position.push(today_staffings[i][:position])
         end
       end
