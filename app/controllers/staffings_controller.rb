@@ -6,6 +6,7 @@ class StaffingsController < ApplicationController
 
   def index
     pick_uniq
+    pick_week_uniq
   end
 
   def new
@@ -59,6 +60,23 @@ class StaffingsController < ApplicationController
     end
     @uniq = member_positions.select{|e| member_positions.count(e) > 3 }.uniq
   end
+
+  def pick_week_uniq
+    member_position_dates = []
+    wdays = ['(日)','(月)','(火)','(水)','(木)','(金)','(土)','(日)','(月)','(火)','(水)','(木)','(金)','(土)']
+    Staffing.all.each do |s|
+      staffing_date = s.date.wday
+      member_position_day = {member: s.member.name, position: s.position.position, wday: wdays[staffing_date]}
+      member_position_dates.push(member_position_day)
+    end
+    Staffing.all.each do |s|
+      staffing_date = s.date.wday + 7
+      member_position_day = {member: s.member.name, position: s.position.position, wday: wdays[staffing_date]}
+      member_position_dates.push(member_position_day)
+    end
+    @week_uniq = member_position_dates.select{|e| member_position_dates.count(e) > 1 }.uniq
+  end
+
 
   def set_members
     @members = Member.all
