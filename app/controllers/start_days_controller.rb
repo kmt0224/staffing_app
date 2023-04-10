@@ -6,12 +6,6 @@ class StartDaysController < ApplicationController
   end
 
   def create
-    @start_day = StartDay.new(start_day_params)
-    if @start_day.save
-      redirect_to root_path
-    else
-      render :index
-    end
     @start_day = StartDay.create(start_day_params)
     redirect_to root_path
   end
