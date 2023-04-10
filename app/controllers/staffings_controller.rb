@@ -62,19 +62,19 @@ class StaffingsController < ApplicationController
   end
 
   def pick_week_uniq
-    member_position_dates = []
+    member_position_days = []
     wdays = ['(日)','(月)','(火)','(水)','(木)','(金)','(土)','(日)','(月)','(火)','(水)','(木)','(金)','(土)']
     Staffing.all.each do |s|
       staffing_date = s.date.wday
       member_position_day = {member: s.member.name, position: s.position.position, wday: wdays[staffing_date]}
-      member_position_dates.push(member_position_day)
+      member_position_days.push(member_position_day)
     end
     Staffing.all.each do |s|
       staffing_date = s.date.wday + 7
       member_position_day = {member: s.member.name, position: s.position.position, wday: wdays[staffing_date]}
-      member_position_dates.push(member_position_day)
+      member_position_days.push(member_position_day)
     end
-    @week_uniq = member_position_dates.select{|e| member_position_dates.count(e) > 1 }.uniq
+    @week_uniq = member_position_days.select{|e| member_position_days.count(e) > 2 }.uniq
   end
 
 
