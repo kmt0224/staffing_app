@@ -86,7 +86,6 @@ class StaffingsController < ApplicationController
     
     14.times do |x|  
       position = []
-      member = []
       today_staffings.count.times do |i|
         if today_staffings[i][:date] == @todays_date + x 
           member.push(today_staffings[i][:member])
@@ -100,7 +99,7 @@ class StaffingsController < ApplicationController
       if wday_num >= 14
         wday_num = wday_num - 14
       end
-      days = { month: (@todays_date + x).month, date: (@todays_date+x).day, member: member, position: position, wday: wdays[wday_num]}
+      days = { month: (@todays_date + x).month, date: (@todays_date+x).day, position: position, wday: wdays[wday_num]}
 
       @week_days.push(days)
     end
