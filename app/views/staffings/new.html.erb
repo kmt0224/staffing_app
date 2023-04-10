@@ -8,26 +8,27 @@
       </div>
       <% @week_days.each do |day| %>
         <div class='item'>
-          <div class=
-            <% if day[:wday] == '(土)' || day[:wday] == '(日)' %>
-              'weekend'
-            <% else %>
-              'date'
-            <% end %>>
-            <%= day[:month] %>/<%= day[:date] %><%= day[:wday] %>
-          </div>
+          <% if day[:wday] == '(土)' || day[:wday] == '(日)' %>
+            <div class='weekend'>
+              <%= day[:month] %>/<%= day[:date] %><%= day[:wday] %>
+            </div>
+          <% else %>
+            <div class='date'>
+              <%= day[:month] %>/<%= day[:date] %><%= day[:wday] %>
+            </div>
+          <% end %>
           <% @members.each do |member| %>
             <%= f.fields_for :staffings do |i| %>
-              <%= i.date_select :date, {default: {day: day[:date]}}, {class: 'date-input'} %>
-            <div class=
               <% if day[:wday] == '(土)' || day[:wday] == '(日)' %>
-                'position-weekend'
+                <div class='position-weekend'>
+                </div>
               <% else %>
-                'position'
-              <% end %>>
-              <%= i.hidden_field :member_id, :value => member.id %>
-              <%= i.select :position_id, @positions,{},{} %>
-            </div>
+                <div class='position'>
+                  <%= i.date_select :date, {default: {day: day[:date]}}, {class: 'date-input'} %>            
+                  <%= i.hidden_field :member_id, :value => member.id %>
+                  <%= i.select :position_id, @positions,{},{} %>
+                </div>
+              <% end %>
             <% end %>
           <% end %>   
         </div>
