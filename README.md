@@ -8,7 +8,7 @@ Staffing App
 https://staffing-app.onrender.com/start_days
 
 # 利用方法
-### 日付の選択
+#### 日付の選択
 ・2週間分の人員配置表を作成するため、登録開始日を選択する
 
 #### 配置表の作成
