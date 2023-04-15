@@ -1,0 +1,333 @@
+/* リセットcss */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* リセットここまで */
+
+body {
+  background-color: white;
+  position: relative;/*←相対位置*/
+  box-sizing: border-box;
+  padding-bottom: 10vh;
+}
+
+/* ヘッダー */
+header {
+  background-color: gray;
+  margin-bottom: 48px;
+  padding: 20px 0;
+}
+
+.inner {
+  width: 1024px;
+  margin: 0 auto;
+}
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav h1 {
+  font-size: 30px;
+  color: #fff;
+}
+
+/* メイン */
+.main {
+  width: 100vw;
+  min-height: 100vh;
+}
+
+/* フッター */
+footer {
+  background-color: #999;
+  width: 100vw;
+  padding: 10px 0;
+  position: absolute;/*←絶対位置*/
+  bottom: 0; /*下に固定*/
+}
+.copyright {
+  text-align: center;
+  color: #fff;
+  font-size: 10px;
+}
+
+/* スタート画面 */
+.contets {
+  width: 50vw;
+  height: 50vh;
+  margin: auto;
+  padding-top: 10vh;
+}
+
+.how-to-use{
+  height: 60%;
+  padding: 5%;
+  border: solid gray;
+}
+
+.how-to-use h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.how-to-use li {
+  margin-bottom: 2px;
+}
+
+.day-register {
+  height: 40%;
+  padding: 5%;
+}
+
+/* 一覧画面 */
+.title {
+  width: 50VW;
+  margin: auto;
+  padding: 2%;
+}
+
+.title h3 {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.title p {
+  margin-bottom: 2px;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+}
+.calendar {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.item {
+  margin-top: 0;
+}
+
+.date {
+  height: 5vh;
+  width: 6vw;
+  display: flex;
+  font-size: 3vh;
+  align-items: center;
+  justify-content: center;
+  border: medium solid rgb(0, 0, 0);
+  background-color: rgb(246, 253, 255);
+}
+
+.weekend {
+  height: 5vh;
+  width: 6vw;
+  display: flex;
+  font-size: 3vh;
+  align-items: center;
+  justify-content: center;
+  border: medium solid rgb(0, 0, 0);
+  background-color: rgb(213, 91, 91);
+}
+
+.position {
+  height: 5vh;
+  width: 6vw;
+  display: flex;
+  font-size: 2vh;
+  align-items: center;
+  justify-content: center;
+  border: medium solid rgb(0, 0, 0);
+  background-color: rgb(246, 253, 255);
+}
+
+.position-weekend {
+  height: 5vh;
+  width: 6vw;
+  display: flex;
+  font-size: 2vh;
+  align-items: center;
+  justify-content: center;
+  border: medium solid rgb(0, 0, 0);
+  background-color: rgb(213, 91, 91);
+}
+
+.members {
+  margin-top: 6vh;
+}
+
+.member {
+  height: 5vh;
+  width: 3vw;
+  display: flex;
+  font-size: 2vh;
+  align-items: center;
+  justify-content: center;
+  border: medium solid rgb(0, 0, 0);
+  background-color: rgb(246, 253, 255);
+}
+
+.buttons {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  margin: 10vh 20vw;
+}
+
+.button {
+  color: black;
+}
+
+.date-input {
+  display: none;
+}
+
+.uniq {
+  display: block;
+  margin-bottom: 1vh;
+}
+
+/* メンバー登録 */
+.all_members {
+  display: flex;
+}
+
+.register {
+  width: 50vw;
+  height: 20vh;
+  margin: auto;
+}
+
+/* 箇所登録 */
+.all_positions {
+  display: flex;
+}

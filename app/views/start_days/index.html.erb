@@ -1,5 +1,22 @@
-<%= form_with model: @start_day, local: true do |f| %>
-  <%= f.label :日付を入力, class: 'lavel' %>
-  <%= f.date_field :start_day %>
-  <%= f.submit '送信', class: 'submit' %>
-<% end %>
+<div class="main">
+  <div class="contets">
+    <div class="how-to-use">
+      <h3>使い方</h3>
+      <ul>
+        <li>・2週間分の人員配置を登録することができるアプリです</li>
+        <li>・登録開始日を選択します</li>
+        <li>・人員を選択します</li>
+        <li>・配置箇所を選択します</li>
+        <li>・プルダウンから人員配置を選択できます</li>
+        <li>・保存を押すと選択内容が登録されます</li>
+      </ul>
+    </div>
+    <%= form_with model: @start_day, local: true do |f| %>
+    <div class="day-register">
+      <%= f.label :開始日を入力, class: 'lavel' %>
+      <%= f.date_field :start_day %>
+      <%= f.submit '選択', class: 'submit' %>
+    </div>
+    <% end %>
+  </div>
+</div>

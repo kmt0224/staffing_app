@@ -1,14 +1,22 @@
-メンバーの登録
-<%= form_with model: @member, local: true do |f| %>
-<div><%= f.text_field :name, placeholder: "名前を入力" %></div>
-<div><%= f.submit "登録する" %></div>
-<% end %>
-
-<% @members.each do |member| %>
-  <div class='all_members'>
-    <div><%= member.name %></div>
-    <%= link_to '削除', member_path(member), method: :delete %>
+<div class="main">
+  <div class="title">
+    <h3>人員の登録</h3>
+    <p>・人員の名前を登録できます</p>
+    <p>・削除ボタンをクリックすると削除されます</p>
   </div>
-<% end %>
-
-<div><%= link_to '入力画面に戻る', new_staffing_path, class: 'button' %></div>
+  <div class="register">
+    <%= form_with model: @member, local: true do |f| %>
+    <div><%= f.text_field :name, placeholder: "名前を入力" %></div>
+    <div><%= f.submit "登録する" %></div>
+    <% end %>
+    <% @members.each do |member| %>
+      <div class='all_members'>
+        <div><%= member.name %></div>
+        <%= link_to '削除', member_path(member), method: :delete %>
+      </div>
+    <% end %>
+  </div>
+  <div class='buttons'>
+    <%= link_to '人員配置に戻る', new_staffing_path, class: 'button' %>
+  </div>
+</div>

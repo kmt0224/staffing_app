@@ -1,4 +1,15 @@
-人員配置表  
+<div class="main"> 
+  <div class="title">
+    <h3>人員配置表</h3>
+    <% unless Staffing.exists? %>
+      <p>・入力画面から人員・配置箇所・人員配置の登録ができます</p>
+      <p>・日付を削除すると日付選択に戻ります</p>
+    <% else %>
+      <p>・削除ボタンをクリックすると削除され、日付選択に戻ります</p>
+      <p>・同じ箇所に4回以上配置される場合メッセージが表示されます</p>
+      <p>・同じ曜日で同じ箇所に配置されている場合メッセージが表示されます</p>
+    <% end %>
+  </div>
   <div class='calendar'>
     <div class='members'>
       <% @members.each do |member| %>
@@ -50,4 +61,4 @@
       「<%= week_uniq[:member] %>」は「<%= week_uniq[:position] %>」に２週連続、<%= week_uniq[:wday] %>曜日で配置されています。
     </div>
   <% end %>
-
+</div>

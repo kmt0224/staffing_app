@@ -1,14 +1,22 @@
-配置箇所の登録
-<%= form_with model: @position, local: true do |f| %>
-<div><%= f.text_field :position, placeholder: "配置箇所を入力" %></div>
-<div><%= f.submit "登録する" %></div>
-<% end %>
-
-<% @positions.each do |position| %>
-  <div class='all_positions'>
-    <div><%= position.position %></div>
-    <%= link_to '削除',  position_path(position), method: :delete %>
+<div class="main">
+  <div class="title">
+    <h3>配置箇所の登録</h3>
+    <p>・配置箇所を登録できます</p>
+    <p>・削除ボタンをクリックすると削除されます</p>
   </div>
-<% end %>
-
-<div><%= link_to '入力画面に戻る', new_staffing_path, class: 'button' %></div>
+  <div class="register">
+    <%= form_with model: @position, local: true do |f| %>
+    <div><%= f.text_field :position, placeholder: "配置箇所を入力" %></div>
+    <div><%= f.submit "登録する" %></div>
+    <% end %>
+    <% @positions.each do |position| %>
+      <div class='all_positions'>
+        <div><%= position.position %></div>
+        <%= link_to '削除',  position_path(position), method: :delete %>
+      </div>
+    <% end %>
+  </div>
+  <div class='buttons'>
+    <%= link_to '人員配置に戻る', new_staffing_path, class: 'button' %>
+  </div>
+</div>

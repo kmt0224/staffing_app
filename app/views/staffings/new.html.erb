@@ -1,4 +1,11 @@
-人員配置の登録
+<div class="main">
+  <div class="title">
+    <h3>人員配置の登録</h3>
+    <p>・プルダウンから配置箇所を選択できます</p>
+    <p>・登録ボタンをクリックすると登録されます</p>
+    <p>・メンバー登録ボタンからメンバー登録画面に移動します</p>
+    <p>・配置箇所登録ボタンから配置箇所登録画面に移動します</p>
+  </div>
   <div class='calendar'>
     <%= form_with model: @staffing, url: staffings_path, class: 'form' do |f| %>
       <div class='members'>
@@ -33,7 +40,7 @@
           <% end %>   
         </div>
       <% end %>
-      <%= f.submit '保存' %>
+      <%= f.submit '登録' %>
     <% end %>
   </div>
 
@@ -42,4 +49,4 @@
     <%= link_to '配置箇所を登録する', positions_path, class: 'button' %>
     <%= link_to 'トップページへ', root_path, class: 'button' %>
   </div>
-
+</div>
