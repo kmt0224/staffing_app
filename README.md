@@ -60,10 +60,10 @@ HTML/CSS/Ruby/Ruby on Rails/MySQL/Github/Visual Studio Code
 
 # ローカルでの動作方法
 以下のコマンドを順に実行
-% git clone https://github.com/kmt0224/staffing_app.git
-% cd staffing_app
-% bundle install
-% yarn install 
+% git clone https://github.com/kmt0224/staffing_app.git  
+% cd staffing_app  
+% bundle install  
+% yarn install  
 
 # 工夫したポイント
 プルダウンから登録させる際に、一つずつ登録ボタンを押すのは煩わしいと考え、全てのプルダウンを選択した上で一括登録ができるように工夫しました。
