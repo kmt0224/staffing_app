@@ -16,14 +16,14 @@ class StartDaysController < ApplicationController
   end
 
   private
+
   def start_day_params
     params.permit(:start_day)
   end
 
   def move_to_index
-    if Staffing.exists? || StartDay.exists?
-      redirect_to root_path
-    end
-  end
+    return unless Staffing.exists? || StartDay.exists?
 
+    redirect_to root_path
+  end
 end
